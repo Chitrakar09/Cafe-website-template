@@ -4,8 +4,10 @@ import Hero from '../components/sections/Hero.jsx'
 import Menu from '../components/sections/Menu.jsx'
 import LatestNews from '../components/sections/LatestNews.jsx'
 import About from '../components/sections/About.jsx'
+import useSmoothScroll from '../hooks/useSmoothScroll.js'
 
 export default function Home() {
+  useSmoothScroll()
   return (
     <div className="flex min-h-screen flex-col items-center gap-10 overflow-x-clip pt-[120px] md:gap-20">
       <Navigation />

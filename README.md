@@ -7,3 +7,4 @@ npm run dev      # http://localhost:5173
 npm run build    # production build in dist/
 ```
 Requires Node.js LTS (built with Node 22). JavaScript/JSX only; no backend or CMS.
+

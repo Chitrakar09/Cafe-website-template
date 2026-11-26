@@ -19,7 +19,7 @@ export default function Footer() {
           </div>
           <div className="flex gap-3">
             {socialLinks.map((s) => (
-              <a key={s.id} href={s.href} aria-label={s.label} target="_blank" rel="noreferrer" className="flex size-11 items-center justify-center rounded-full bg-bg transition-opacity hover:opacity-70">
+              <a key={s.id} href={s.href} aria-label={s.label} target="_blank" rel="noreferrer" style={{ '--press': 0.9 }} className="hover-press flex size-11 items-center justify-center rounded-full bg-bg">
                 {socialIcons[s.id]('size-5')}
               </a>
             ))}
@@ -32,11 +32,8 @@ export default function Footer() {
             : <div className="flex size-full min-h-[320px] items-center justify-center bg-bg text-ink-2">[Map embed – set contact.mapEmbedUrl]</div>}
         </div>
       </div>
-      <div className="mx-auto flex w-full max-w-[1400px] flex-col gap-8 pb-5 md:flex-row md:justify-between md:px-10">
+      <div className="mx-auto flex w-full justify-center max-w-[1400px] gap-8 pb-5 md:px-10">
         <p>{footer.copyright}</p>
-        <div className="flex flex-wrap gap-6">
-          {footer.legalLinks.map((l) => <a key={l.label} href={l.href} className="hover:underline">{l.label}</a>)}
-        </div>
       </div>
     </footer>
   )

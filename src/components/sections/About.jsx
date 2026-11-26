@@ -14,7 +14,7 @@ export default function About() {
           </div>
           <p className="md:w-[90%]">{about.description}</p>
           <div><strong className="font-medium">Location:</strong>{contact.address.map((l, i) => <p key={i}>{l}</p>)}</div>
-          <Button href={about.cta.href}>{about.cta.label}</Button>
+          <Button href={about.cta.href} press={0.98}>{about.cta.label}</Button>
         </div>
       </div>
     </section>

@@ -2,18 +2,19 @@ import { menu } from '../../data/configs'
 import { sectionIds } from '../../data/constants'
 import Badge from '../ui/Badge.jsx'
 import MenuItem from '../ui/MenuItem.jsx'
+import Reveal from '../ui/Reveal.jsx'
 
 function Category({ category }) {
   const { name, badge, image, imageSide, items } = category
   return (
     <div className="flex w-full flex-col items-start gap-4 md:flex-row">
-      <div className={`flex w-full flex-1 flex-col gap-10 rounded-[32px] bg-highlight p-10 ${imageSide === 'left' ? 'md:order-2' : ''}`}>
+      <Reveal trigger="view" y={120} fade={false} className={`flex w-full flex-1 flex-col gap-10 rounded-[32px] bg-highlight p-10 ${imageSide === 'left' ? 'md:order-2' : ''}`}>
         <h3 className="h3 pt-4 text-center">{name}</h3>
         <div className="flex flex-col gap-10">{items.map((it, i) => <MenuItem key={i} {...it} />)}</div>
-      </div>
-      <div role="img" aria-label={badge} style={{ backgroundImage: `url(${image})` }} className="relative h-[420px] w-full flex-1 rounded-[32px] bg-highlight bg-cover bg-center md:h-[80vh]">
+      </Reveal>
+      <Reveal trigger="view" y={40} fade={false} role="img" aria-label={badge} style={{ backgroundImage: `url(${image})` }} className="relative h-[420px] w-full flex-1 rounded-[32px] bg-highlight bg-cover bg-center md:h-[80vh]">
         <Badge className="absolute left-6 top-6">{badge}</Badge>
-      </div>
+      </Reveal>
     </div>
   )
 }
